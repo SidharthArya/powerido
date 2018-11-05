@@ -1,0 +1,24 @@
+#+TITLE: PowerIDO
+#+AUTHOR: Sidharth Arya
+
+Ido is a fast and efficient visual completion system in emacs, which is packaged with emacs. Powerido aims to create a completion framework by using Ido.
+
+* Basic Usage
+This is how i use power ido.
+#+BEGIN_SRC emacs-lisp
+(use-package powerido
+    :config
+    (define-prefix-command 'ring)
+    :bind
+    ("M-x" . powerido-M-x)
+    ("C-|" . ring)
+    ("C-| m" . powerido-mark-ring)
+    ("C-| k" . powerido-kill-ring)
+)
+#+END_SRC
+
+
+* TODO
+- [X] Kill Ring
+- [X] Mark Ring
+- [X] M-x
