@@ -12,9 +12,9 @@
 (defun powerido-M-x()
   "Interactively do M-x"
   (interactive)
-  (ido-completing-read
+  (funcall-interactively (intern (ido-completing-read
           "M-x "
-          (all-completions "" obarray 'commandp)))
+          (all-completions "" obarray 'commandp)))))
 
 
 (defun powerido-mark-ring()
@@ -29,5 +29,6 @@
   (interactive)
   (insert 
   (ido-completing-read
-          "Kill Ring:" kill-ring)))
+   "Kill Ring:" kill-ring)))
+
 (provide 'powerido)
